@@ -1,0 +1,5 @@
+.cache/
+elpa-*/
+etc/
+var/
+custom.el
