@@ -31,6 +31,8 @@
     ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
     ("melpa"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
+(setq package-check-signature nil)
+
 ;; Use Tsinghua University mirrors by default
 (setq package-archives pkg-url-tuna-mirrors)
 ;; (setq package-archives pkg-url-default) ; Uncomment to use official sources
@@ -59,22 +61,25 @@
 ;; Use-Package Configuration
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Setup use-package (built-in since Emacs 29.1)
-(when (version< emacs-version "29.1")
-  (unless (package-installed-p 'use-package)
-    (package-refresh-contents)
-    (package-install 'use-package))
-  (eval-and-compile
-    (setq use-package-always-ensure t)
-    (setq use-package-always-defer nil)
-    (setq use-package-always-demand nil)
-    (setq use-package-expand-minimally nil)
-    (setq use-package-enable-imenu-support t))
-  (eval-when-compile
-    (require 'use-package)))
+;; Initialize packages
+(unless (bound-and-true-p package--initialized)
+  (setq package-enable-at-startup nil)
+  (package-initialize))
 
-;; Enable imenu support for use-package
-(setq use-package-enable-imenu-support t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-and-compile
+  (setq use-package-always-ensure nil)
+  (setq use-package-always-defer nil)
+  (setq use-package-always-demand nil)
+  (setq use-package-expand-minimally nil)
+  (setq use-package-enable-imenu-support t))
+
+(eval-when-compile (require 'use-package))
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
 
 ;; Native Compilation
 (setq native-compile-cache nil)

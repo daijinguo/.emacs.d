@@ -2,4 +2,6 @@
 elpa-*/
 etc/
 var/
+eln-cache/
 custom.el
+custom.el~
