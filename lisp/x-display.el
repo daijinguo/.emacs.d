@@ -93,8 +93,13 @@
 (setq-default tab-width 4)
 
 
-;; Default text mode settings ??????
+;; set default major mode to text-mode
 (setq-default major-mode 'text-mode)
+(add-to-list 'auto-mode-alist '("\\.log.m\\'"     . text-mode))
+(add-to-list 'auto-mode-alist '("\\.txt\\'"       . text-mode))
+(add-to-list 'auto-mode-alist '("\\.log\\'"       . text-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'"        . text-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'"  . text-mode))
 
 
 (provide 'x-display)
