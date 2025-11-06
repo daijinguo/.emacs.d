@@ -33,7 +33,7 @@
   :init
     (setq doom-themes-load-themes t)
   :config
-    (load-theme 'doom-molokai t)  ;; doom-molokai  doom-vibrant
+    (load-theme 'doom-molokai t)  ;; doom-one doom-ayu-dark doom-molokai doom-vibrant
 )
 
 (doom-themes-visual-bell-config)
@@ -51,42 +51,21 @@
 ;; --------------------------------------------------
 ;; mode line
 
-(use-package spaceline
-  :ensure t
-  :config
-    (require 'spaceline-config)
-    (spaceline-spacemacs-theme)
-    (spaceline-toggle-line-column-on)
-    (spaceline-toggle-line-on)
-    (spaceline-info-mode)
-    (setq spaceline-left
-          '((evil-state :face highlight)
-            (buffer-modified)
-            (buffer-name :face spaceline-buffer-name-face)
-            (major-mode)
-            (lsp-status :when active)
-            ))
-    (setq spaceline-right
-          '((flycheck-status :when active)
-            (version-control :when active)
-            (org-clock :when active)
-            (line-column :face highlight)
-            (buffer-position :face highlight)
-            (buffer-encoding)
-            ))
-    (setq spaceline-center '()
-          spaceline-height 24
-          spaceline-separator " "
-          spaceline-flycheck-bullet "⦿ ")
-    (custom-set-faces
-      '(spaceline-face ((t (:background "#282c34" :foreground "#abb2bf"))))
-      '(spaceline-highlight-face ((t (:background "#3f444a" :foreground "#e06c75"))))
-      '(spaceline-buffer-name-face ((t (:foreground "#82aaff" :bold t))))
-      '(spaceline-vc-face ((t (:foreground "#c3e88d"))))
-    )
-)
+(set-face-attribute 'mode-line nil
+  :background "#282c34"
+  :foreground "#abb2bf"
+  :box nil
+  :height 1.05)
 
-
+(setq mode-line-format
+  '("%e"
+    mode-line-buffer-identification
+    "  "
+    (:eval (format "L%l:C%c" (line-number-at-pos) (current-column)))
+    "  "
+    mode-line-modes
+    "  "
+    (:eval (if (buffer-modified-p) "●" ""))))
 
 
 (provide 'x-theme)
