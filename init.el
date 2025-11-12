@@ -15,6 +15,8 @@
 (require 'x-ibuffers)
 (require 'x-treemacs)
 (require 'x-theme)
+(require 'x-program)
+
 
 
 ;; end if init.el
