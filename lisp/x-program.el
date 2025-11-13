@@ -1,5 +1,9 @@
 ;;; -*- lexical-binding: t no-byte-compile: t -*-
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
 
 (use-package company
   :ensure t
@@ -16,6 +20,7 @@
 ;; Install lsp-mode and related packages
 (use-package lsp-mode
   :ensure t
+  :after which-key 
   :hook
   (;; Replace these with the languages you use
    (python-mode . lsp)
@@ -52,6 +57,7 @@
   (setq lsp-auto-configure t) ; Auto-configure based on project files
   ;; File watch settings
   (setq lsp-file-watch-threshold 5000) ; Increase threshold for large projects
+  (which-key-add-key-based-replacements "C-c l" "LSP commands")
 )
 
 ;; Install LSP UI for better UI integration

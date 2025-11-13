@@ -93,6 +93,13 @@
 ;; IBuffer - Improved buffer menu
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;(use-package nerd-icons
+;;;  :ensure t
+;;;  :config
+;;;  (unless (nerd-icons-font-installed-p)
+;;;    (nerd-icons-install-fonts t))
+;;;)
+
 (use-package ibuffer
   :ensure nil
   :bind ("C-x C-b" . ibuffer)
