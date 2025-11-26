@@ -4,6 +4,7 @@
 
 
 (use-package treemacs
+  :if (display-graphic-p)
   :ensure t
   :defer t
   :init

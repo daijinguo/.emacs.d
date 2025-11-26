@@ -14,6 +14,7 @@
 (require 'x-edit)
 (require 'x-ibuffers)
 (require 'x-treemacs)
+(require 'x-neotree)
 (require 'x-theme)
 (require 'x-program)
 
