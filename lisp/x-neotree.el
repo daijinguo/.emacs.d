@@ -1,13 +1,14 @@
 ;;; -*- lexical-binding: t no-byte-compile: t -*-
 
-(use-package all-the-icons :ensure t)
+(use-package nerd-icons
+  :ensure t)
 
 (use-package neotree
   :ensure t
   :bind (("C-x n t" . neotree-toggle)
          ("C-x n f" . neotree-find))
   :config
-  (setq neo-theme 'arrow)
+  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-window-fixed-size nil)
   (setq neo-autorefresh nil)
 
