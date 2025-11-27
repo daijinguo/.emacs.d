@@ -1,17 +1,17 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t -*-
 
-(use-package avy
-  :ensure t
-  :bind (("M-s f" . avy-goto-char)
-         ("M-s F" . avy-goto-char-2)
-         ("M-s w" . avy-goto-word-1)
-         ("M-s l" . avy-goto-line))
-  :config
-  ;;(setq avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-  (setq avy-keys '(?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9))
-  (setq avy-style 'at-full)
-  (setq avy-timeout-seconds 0.5)
-)
+;; (use-package avy
+;;   :ensure t
+;;   :bind (("M-s f" . avy-goto-char)
+;;          ("M-s F" . avy-goto-char-2)
+;;          ("M-s w" . avy-goto-word-1)
+;;          ("M-s l" . avy-goto-line))
+;;   :config
+;;   (setq avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+;;   ;;(setq avy-keys '(?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9))
+;;   (setq avy-style 'at-full)
+;;   (setq avy-timeout-seconds 0.5)
+;; )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Vertico - Vertical completion UI
@@ -61,29 +61,45 @@
 ;; Consult - Useful completion commands
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; https://github.com/minad/consult
 (use-package consult
   :ensure t
-  :bind (([remap imenu]                  . consult-imenu)
-         ([remap goto-line]              . consult-goto-line)
-         ([remap bookmark-jump]          . consult-bookmark)
-         ([remap evil-show-marks]        . consult-mark)
-         ([remap recentf-open-files]     . consult-recent-file)
-         ([remap repeat-complex-command] . consult-complex-command))
-  :config
-    (with-no-warnings
-      (consult-customize consult-ripgrep
-                         consult-git-grep
-                         consult-grep
-                         consult-bookmark
-                         consult-recent-file
-                         consult-buffer
-                         :preview-key nil))
+  :bind (("M-s f" . consult-find)
+         ("M-s g" . consult-ripgrep)
+         ("C-x b" . consult-buffer)
+         ("M-y"   . consult-yank-pop)
+         ("M-s l" . consult-line)
+         ("M-g g" . consult-goto-line))
   :custom
+    (consult-ripgrep-args
+      (concat
+        "rg "
+        "--hidden "
+        "--glob !.git/ --glob !node_modules/ --glob !dist/ --glob !build/ --glob !venv/ --glob !__pycache__/ "
+        "--line-number "
+        "--smart-case "
+        "--null "
+        "--color=never "
+        "--no-heading "
+        "--with-filename "
+        "--max-columns=1024 "
+      )
+    )
+    (consult-preview-key '(:debounce 0.2 any))
+    (consult-buffer-sort 'visibility)
+    (consult-file-externally-functions nil)
     (consult-fontify-preserve nil)
     (consult-async-min-input 2)
     (consult-async-refresh-delay 0.15)
     (consult-async-input-throttle 0.2)
-    (consult-async-input-debounce 0.1))
+    (consult-async-input-debounce 0.1)
+  :config
+    (with-no-warnings
+      (consult-customize consult-ripgrep consult-find consult-grep consult-buffer
+        :preview-key '(:debounce 0.3 any)
+      )
+    )
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
