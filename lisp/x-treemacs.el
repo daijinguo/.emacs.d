@@ -4,7 +4,7 @@
 
 
 (use-package treemacs
-  :if (display-graphic-p)
+  ;;:if (display-graphic-p)
   :ensure t
   :defer t
   :init
@@ -98,9 +98,6 @@
         ("C-x t M-t" . treemacs-find-tag))
 )
 
-(with-eval-after-load 'treemacs
-  (add-hook 'treemacs-mode-hook (lambda ()(text-scale-decrease 1.2)))
-)
 
 (use-package treemacs-projectile
   :after (treemacs projectile)
