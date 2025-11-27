@@ -37,7 +37,7 @@
 (cond
   ;; macOS
   ((eq system-type 'darwin)
-    (set-face-attribute 'default nil :font "Reddit Mono-16")
+    (set-face-attribute 'default nil :font "Reddit Mono-16.4")
     ;; (set-face-attribute 'default nil :font "CamingoCode-15")
     ;; (set-face-attribute 'default nil :font "IBM Plex Mono-15")
     ;; (set-face-attribute 'default nil :font "M PLUS 1 Code-16")
