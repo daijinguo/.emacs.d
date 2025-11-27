@@ -18,7 +18,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package embark
-  :ensure t)
+  :ensure t
+  :init
+  (setq prefix-help-command #'embark-prefix-help-command)
+)
 
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
