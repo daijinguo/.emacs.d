@@ -1,5 +1,18 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t -*-
 
+(use-package avy
+  :ensure t
+  :bind (("M-s f" . avy-goto-char)
+         ("M-s F" . avy-goto-char-2)
+         ("M-s w" . avy-goto-word-1)
+         ("M-s l" . avy-goto-line))
+  :config
+  ;;(setq avy-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  (setq avy-keys '(?1 ?2 ?3 ?4 ?5 ?6 ?7 ?8 ?9))
+  (setq avy-style 'at-full)
+  (setq avy-timeout-seconds 0.5)
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Vertico - Vertical completion UI
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
