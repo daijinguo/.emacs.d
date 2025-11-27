@@ -1,5 +1,12 @@
 ;;; -*- lexical-binding: t no-byte-compile: t -*-
 
+;; git
+(use-package magit
+  :ensure t
+  :bind (("C-x g s" . magit-status)
+         ("C-x g d" . magit-dispatch)))
+
+
 (use-package which-key
   :ensure t
   :config
