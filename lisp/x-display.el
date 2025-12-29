@@ -102,6 +102,7 @@
 (add-to-list 'auto-mode-alist '("\\.log\\'"       . text-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'"        . text-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'"  . text-mode))
+(add-to-list 'auto-mode-alist '("\\.conf\\'"      . text-mode))
 
 
 (provide 'x-display)
