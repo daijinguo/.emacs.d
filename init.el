@@ -18,6 +18,8 @@
 (require 'x-theme)
 (require 'x-program)
 
+(require 'server)
+(unless (server-running-p) (server-start))
 
 
 ;; end if init.el
