@@ -45,7 +45,7 @@
     (setq whitespace-style
           '(face space-mark tab-mark newline-mark missing-newline-at-eof))
     (setq whitespace-display-mappings
-          '((newline-mark ?\n    [?\u21B5 ?\n] [?$ ?\n])
+          '((newline-mark ?\n    [?\u21A9 ?\n] [?$ ?\n])
             (tab-mark     9      [8674 9]      [92 9] )))
     (setq whitespace-global-modes nil)
     (setq whitespace-action '(auto-cleanup)))

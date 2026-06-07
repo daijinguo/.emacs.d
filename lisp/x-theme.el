@@ -33,7 +33,7 @@
   :init
     (setq doom-themes-load-themes t)
   :config
-    (load-theme 'doom-molokai t)  ;; doom-one doom-ayu-dark doom-molokai doom-vibrant
+    (load-theme 'doom-one t)  ;; doom-molokai doom-one doom-ayu-dark doom-molokai doom-vibrant
 )
 
 (doom-themes-visual-bell-config)
