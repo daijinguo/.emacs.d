@@ -1,0 +1,14 @@
+lisp/x-edit.el
+  h_580cab1d6fefdf 48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "207337dcd9cb01ba3059b16e7076261539003a55",
+  "prompts": {},
+  "humans": {
+    "h_580cab1d6fefdf": {
+      "author": "daijinguo <jinguo.dai@nio.com>"
+    }
+  }
+}
