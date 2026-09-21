@@ -1,0 +1,21 @@
+lisp/x-theme.el
+  s_d6f81f86b4472b::t_80a7b602cf79cf 40
+  s_d6f81f86b4472b::t_0847db57217a34 37-39,41-44
+  s_d6f81f86b4472b::t_55ca443bce34d0 45-46
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9e3e50b9a50593d26ef157389cd97a225acb9de1",
+  "prompts": {},
+  "sessions": {
+    "s_d6f81f86b4472b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f9aa3ee2-5e72-4a2a-bcb2-83e8751e3303",
+        "model": "Deepseek-V4-Flash-Tencent"
+      },
+      "human_author": "daijinguo <jinguo.dai@nio.com>"
+    }
+  }
+}
