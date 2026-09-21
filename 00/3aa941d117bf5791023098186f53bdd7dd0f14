@@ -1,0 +1,19 @@
+init.el
+  s_af6e4ff81193b7::t_451e690b02f6cb 3-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "003aa941d117bf5791023098186f53bdd7dd0f14",
+  "prompts": {},
+  "sessions": {
+    "s_af6e4ff81193b7": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b2dc65f3-f66d-4c8d-b0c7-177a0e47029f",
+        "model": "Deepseek-V4-Flash-Tencent"
+      },
+      "human_author": "daijinguo <jinguo.dai@nio.com>"
+    }
+  }
+}
