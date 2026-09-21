@@ -34,6 +34,16 @@
     (setq doom-themes-load-themes t)
   :config
     (load-theme 'doom-one t)  ;; doom-molokai doom-one doom-ayu-dark doom-molokai doom-vibrant
+    ;; 终端模式 (-nw) 下继承终端自身的背景色，不强制覆盖背景。
+    ;; 直接覆盖主题中 default face 的 spec，避免启动完成后
+    ;; face-set-after-frame-default 用主题背景 #282c34 重新计算 face。
+    (unless (display-graphic-p)
+      (custom-theme-set-faces
+       'doom-one
+       `(default ((t (:background unspecified
+                                  :foreground ,(face-attribute 'default :foreground))))))
+      (when (frame-live-p (selected-frame))
+        (set-frame-parameter (selected-frame) 'background-color 'unspecified)))
 )
 
 (doom-themes-visual-bell-config)
